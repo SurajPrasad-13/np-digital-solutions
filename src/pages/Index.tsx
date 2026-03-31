@@ -1,16 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import WhyUsSection from "@/components/WhyUsSection";
+import ServicesSection from "@/components/ServicesSection";
+import TechStackSection from "@/components/TechStackSection";
+import StatsSection from "@/components/StatsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import PortfolioSection from "@/components/PortfolioSection";
+import BlogSection from "@/components/BlogSection";
+import LocationSection from "@/components/LocationSection";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <HeroSection />
+      <WhyUsSection />
+      <ServicesSection />
+      <TechStackSection />
+      <StatsSection />
+      <TestimonialsSection />
+      <PortfolioSection />
+      <BlogSection />
+      <LocationSection />
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
