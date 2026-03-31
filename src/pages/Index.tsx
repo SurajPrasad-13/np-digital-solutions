@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import WhyUsSection from "@/components/WhyUsSection";
@@ -11,13 +10,11 @@ import BlogSection from "@/components/BlogSection";
 import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CTASection from "@/components/CTASection";
+import PageTransition from "@/components/PageTransition";
 
-const Index = () => {
-  useEffect(() => {
-    document.documentElement.classList.add("dark");
-  }, []);
-
-  return (
+const Index = () => (
+  <PageTransition>
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <HeroSection />
@@ -28,11 +25,12 @@ const Index = () => {
       <TestimonialsSection />
       <PortfolioSection />
       <BlogSection />
+      <CTASection />
       <LocationSection />
       <Footer />
       <WhatsAppButton />
     </div>
-  );
-};
+  </PageTransition>
+);
 
 export default Index;

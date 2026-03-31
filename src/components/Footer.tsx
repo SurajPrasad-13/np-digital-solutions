@@ -1,4 +1,5 @@
 import { Github, Twitter, Linkedin, Instagram, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,9 +7,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
-            <h3 className="font-heading font-bold text-xl mb-4">
+            <Link to="/" className="font-heading font-bold text-xl mb-4 block">
               <span className="gradient-text">NP</span> Digital
-            </h3>
+            </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Building digital experiences that drive growth and transform businesses worldwide.
             </p>
@@ -21,21 +22,33 @@ const Footer = () => {
             </div>
           </div>
 
-          {[
-            { title: "Services", links: ["UI/UX Design", "Web Development", "App Development", "SEO", "Marketing"] },
-            { title: "Company", links: ["About Us", "Portfolio", "Blog", "Careers", "Contact"] },
-          ].map((col) => (
-            <div key={col.title}>
-              <h4 className="font-heading font-semibold mb-4">{col.title}</h4>
-              <ul className="space-y-2.5">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">{l}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div>
+            <h4 className="font-heading font-semibold mb-4">Services</h4>
+            <ul className="space-y-2.5">
+              {["UI/UX Design", "Web Development", "App Development", "SEO", "Marketing"].map((l) => (
+                <li key={l}>
+                  <Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">{l}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-heading font-semibold mb-4">Company</h4>
+            <ul className="space-y-2.5">
+              {[
+                { label: "About Us", to: "/about" },
+                { label: "Products", to: "/products" },
+                { label: "Blog", to: "/blogs" },
+                { label: "Careers", to: "/careers" },
+                { label: "Contact", to: "/contact" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <Link to={l.to} className="text-sm text-muted-foreground hover:text-primary transition-colors">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <h4 className="font-heading font-semibold mb-4">Newsletter</h4>
