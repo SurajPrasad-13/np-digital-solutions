@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import Logo from "../assets/NpDigital-logo.jpeg";
 
 const links = [
   { label: "Home", to: "/" },
@@ -34,12 +35,15 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg" : ""
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg"
+          : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="font-heading font-bold text-xl">
-          <span className="gradient-text">NP</span> Digital
+          <img src={Logo} alt="" className="w-20 h-20" />
+          {/* <span className="gradient-text">NP</span> Digital Solutions */}
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">
@@ -48,7 +52,9 @@ const Navbar = () => {
               key={l.to}
               to={l.to}
               className={`text-sm font-medium transition-colors ${
-                location.pathname === l.to ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                location.pathname === l.to
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {l.label}
@@ -58,7 +64,10 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Link to="/contact" className="hidden md:inline-flex gradient-button px-5 py-2 text-sm">
+          <Link
+            to="/contact"
+            className="hidden md:inline-flex gradient-button px-5 py-2 text-sm"
+          >
             Get in Touch
           </Link>
           <button className="lg:hidden p-2" onClick={() => setOpen(!open)}>
@@ -81,13 +90,18 @@ const Navbar = () => {
                   key={l.to}
                   to={l.to}
                   className={`text-sm font-medium py-2 ${
-                    location.pathname === l.to ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                    location.pathname === l.to
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {l.label}
                 </Link>
               ))}
-              <Link to="/contact" className="gradient-button px-5 py-2.5 text-sm text-center mt-2">
+              <Link
+                to="/contact"
+                className="gradient-button px-5 py-2.5 text-sm text-center mt-2"
+              >
                 Get in Touch
               </Link>
             </div>
