@@ -8,14 +8,54 @@ import CTASection from "@/components/CTASection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const testimonials = [
-  { name: "Sarah Johnson", role: "CEO, TechStart", text: "NP Digital Solutions transformed our online presence completely. Their attention to detail and innovative approach exceeded all expectations. Our conversion rate increased by 300%.", rating: 5 },
-  { name: "Michael Chen", role: "Founder, GrowthLab", text: "The team delivered a stunning web application ahead of schedule. Their technical expertise and creative vision are truly world-class. Highly recommend!", rating: 5 },
-  { name: "Emily Davis", role: "Marketing Director, Elevate", text: "Our SEO rankings skyrocketed after working with NP Digital. Professional, responsive, and results-driven — couldn't ask for more.", rating: 5 },
-  { name: "James Wilson", role: "CTO, CloudSync", text: "Outstanding mobile app development. They understood our vision perfectly and delivered an app our users absolutely love. The UX is phenomenal.", rating: 5 },
-  { name: "Lisa Martinez", role: "CEO, BrightPath", text: "From concept to launch, NP Digital handled everything flawlessly. Their digital marketing strategies have been a game-changer for our brand.", rating: 5 },
-  { name: "David Kim", role: "Founder, NexGen", text: "We've worked with many agencies, but NP Digital stands out. Their innovative solutions and dedication to quality are unmatched.", rating: 5 },
-  { name: "Amanda Taylor", role: "Product Manager, Flowstate", text: "The UI/UX redesign they did for our platform was incredible. User engagement went up 150% within the first month of launch.", rating: 5 },
-  { name: "Robert Brown", role: "VP Marketing, Stellar", text: "NP Digital's holistic approach to digital transformation helped us achieve goals we thought were years away. Exceptional team.", rating: 4 },
+  {
+    name: "Amit Sharma",
+    role: "CEO, TechStart",
+    text: "NP Digital Solutions transformed our online presence completely. Their attention to detail and innovative approach exceeded all expectations. Our conversion rate increased by 300%.",
+    rating: 5,
+  },
+  {
+    name: "Rahul Verma",
+    role: "Founder, GrowthLab",
+    text: "The team delivered a stunning web application ahead of schedule. Their technical expertise and creative vision are truly world-class. Highly recommend!",
+    rating: 5,
+  },
+  {
+    name: "Priya Singh",
+    role: "Marketing Director, Elevate",
+    text: "Our SEO rankings skyrocketed after working with NP Digital. Professional, responsive, and results-driven — couldn't ask for more.",
+    rating: 5,
+  },
+  {
+    name: "Neha Gupta",
+    role: "CTO, CloudSync",
+    text: "Outstanding mobile app development. They understood our vision perfectly and delivered an app our users absolutely love. The UX is phenomenal.",
+    rating: 5,
+  },
+  {
+    name: "Ankit Agarwal",
+    role: "CEO, BrightPath",
+    text: "From concept to launch, NP Digital handled everything flawlessly. Their digital marketing strategies have been a game-changer for our brand.",
+    rating: 5,
+  },
+  {
+    name: "Pooja Mehta",
+    role: "Founder, NexGen",
+    text: "We've worked with many agencies, but NP Digital stands out. Their innovative solutions and dedication to quality are unmatched.",
+    rating: 5,
+  },
+  {
+    name: "Rohan Kapoor",
+    role: "Product Manager, Flowstate",
+    text: "The UI/UX redesign they did for our platform was incredible. User engagement went up 150% within the first month of launch.",
+    rating: 5,
+  },
+  {
+    name: "Sneha Iyer",
+    role: "VP Marketing, Stellar",
+    text: "NP Digital's holistic approach to digital transformation helped us achieve goals we thought were years away. Exceptional team.",
+    rating: 4,
+  },
 ];
 
 const Testimonials = () => (
@@ -41,10 +81,16 @@ const Testimonials = () => (
               className="glass-card-hover p-6 md:p-8 flex flex-col"
             >
               <Quote size={24} className="text-primary/30 mb-4" />
-              <p className="text-foreground/90 leading-relaxed flex-1 mb-6 italic">"{t.text}"</p>
+              <p className="text-foreground/90 leading-relaxed flex-1 mb-6 italic">
+                "{t.text}"
+              </p>
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
+                  <Star
+                    key={j}
+                    size={16}
+                    className="text-yellow-400 fill-yellow-400"
+                  />
                 ))}
               </div>
               <div className="flex items-center gap-3 pt-4 border-t border-border">
@@ -52,7 +98,9 @@ const Testimonials = () => (
                   {t.name[0]}
                 </div>
                 <div>
-                  <h4 className="font-heading font-semibold text-sm">{t.name}</h4>
+                  <h4 className="font-heading font-semibold text-sm">
+                    {t.name}
+                  </h4>
                   <p className="text-muted-foreground text-xs">{t.role}</p>
                 </div>
               </div>

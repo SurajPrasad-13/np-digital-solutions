@@ -49,10 +49,10 @@ const Contact = () => (
             className="flex flex-col gap-6"
           >
             {[
-              { icon: MapPin, title: "Visit Us", text: "123 Digital Avenue, Suite 456\nNew York, NY 10001" },
-              { icon: Phone, title: "Call Us", text: "+1 (555) 123-4567" },
-              { icon: Mail, title: "Email Us", text: "hello@npdigital.com" },
-              { icon: Clock, title: "Working Hours", text: "Mon – Fri: 9:00 AM – 6:00 PM\nSat – Sun: Closed" },
+              { icon: MapPin, title: "Visit Us", text: "1st floor Nanda building Ambay Market, Jamuna Dairy, Sodala,\n Jaipur, Rajasthan 302006" },
+              { icon: Phone, title: "Call Us", text: "+91 9509167614" },
+              { icon: Mail, title: "Email Us", text: " npdigitalsolutions001@gmail.com" },
+              { icon: Clock, title: "Working Hours", text: "Mon – Fri: 10:00 AM – 7:00 PM\nSat – Sun: Closed" },
             ].map((item, i) => (
               <motion.div
                 key={item.title}
@@ -86,7 +86,7 @@ const Contact = () => (
 
             {/* Map */}
             <div className="glass-card overflow-hidden rounded-2xl h-64">
-              <iframe
+              {/* <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.279909!2d-74.259867!3d40.697488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York!5e0!3m2!1sen!2sus!4v1"
                 width="100%"
                 height="100%"
@@ -95,7 +95,17 @@ const Contact = () => (
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Office Location"
-              />
+              /> */}
+              <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1186.9402846792677!2d75.77138001788163!3d26.902462148173132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db4657e04180d%3A0xd39e8f2a5d295ffe!2sAmbey%20Market%2C%20Jamuna%20Dairy%2C%20Gayatri%20Nagar%2C%20Sodala%2C%20Jaipur%2C%20Rajasthan%20302006!5e0!3m2!1sen!2sin!4v1774947591241!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: 320 }}
+              // allowfullscreen 
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Office Location"
+            ></iframe>
             </div>
           </motion.div>
         </div>
