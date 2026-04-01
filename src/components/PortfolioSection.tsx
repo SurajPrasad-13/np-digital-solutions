@@ -6,7 +6,7 @@ import ECommercePlatform from "../assets/ecommerce.png";
 import FitnessTrackerApp from "../assets/FitnessTracker.webp";
 import SaaS from "../assets/SaaSDashboard.avif";
 import CorporateWeb from "../assets/CorporateWebsite.jpg";
-import SeoCampaign from "../assets/SeoCampaign.jpg";
+import SeoCampaign from "../assets/SEOCampaign.jpg";
 
 const projects = [
   {
