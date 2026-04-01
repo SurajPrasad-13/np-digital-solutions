@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
+import ContactPopup from "@/components/ContactPopup";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -52,6 +53,7 @@ const App = () => (
       <BrowserRouter>
         {/* <DarkModeInit /> */}
         <ScrollToTop />
+        <ContactPopup />
         <AnimatedRoutes />
       </BrowserRouter>
     </TooltipProvider>
