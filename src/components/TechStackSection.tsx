@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import DJango from "../assets/django-icon-svgrepo-com.svg";
-import Laravel from "../assets/laravel.svg";
+// import Laravel from "../assets/laravel.svg";
 import Spring from "../assets/spring.svg";
 
 const categories = [
@@ -64,7 +64,7 @@ const categories = [
         name: "PHP",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
       },
-      { name: "Laravel", logo: Laravel },
+      // { name: "Laravel", logo: Laravel },
     ],
   },
   {
