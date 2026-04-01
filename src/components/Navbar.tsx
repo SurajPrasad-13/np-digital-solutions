@@ -7,26 +7,26 @@ import Logo from "../assets/NP1full.png";
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { 
-    label: "Services", 
+  {
+    label: "Services",
     to: "/services",
     submenu: [
       { label: "Web Development", to: "/services/web-development" },
       { label: "Solution", to: "/services/solution" },
       { label: "Industries", to: "/services/industries" },
-    ]
+    ],
   },
   { label: "Products", to: "/products" },
   { label: "Testimonials", to: "/testimonials" },
   { label: "Careers", to: "/careers" },
-  { 
-    label: "Work", 
+  {
+    label: "Work",
     to: "/work",
     submenu: [
       { label: "Projects", to: "/work/projects" },
-      { label: "Portfolio", to: "/work/portfolio" },
+      { label: "Portfolio", to: "/services" },
       { label: "Case-studies", to: "/work/case-studies" },
-    ]
+    ],
   },
   { label: "Contact Us", to: "/contact" },
 ];
@@ -73,16 +73,18 @@ const Navbar = () => {
               <Link
                 to={l.to}
                 className={`text-sm font-medium transition-colors flex items-center gap-1 py-2 px-1 rounded-md ${
-                  location.pathname === l.to || (l.submenu && l.submenu.some(s => location.pathname === s.to))
+                  location.pathname === l.to ||
+                  (l.submenu &&
+                    l.submenu.some((s) => location.pathname === s.to))
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-foreground/70 hover:text-foreground"
                 } ${l.submenu && hoveredItem === l.label ? "bg-primary/5 text-primary" : ""}`}
               >
                 {l.label}
                 {l.submenu && (
-                  <ChevronDown 
-                    size={14} 
-                    className={`transition-transform duration-300 ${hoveredItem === l.label ? "rotate-180" : ""}`} 
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform duration-300 ${hoveredItem === l.label ? "rotate-180" : ""}`}
                   />
                 )}
               </Link>
@@ -104,7 +106,7 @@ const Navbar = () => {
                           className={`block px-4 py-2.5 text-sm font-medium transition-all rounded-lg hover:bg-primary/5 hover:text-primary ${
                             location.pathname === sub.to
                               ? "bg-primary/5 text-primary"
-                              : "text-muted-foreground"
+                              : "text-foreground/70"
                           }`}
                         >
                           {sub.label}
@@ -141,7 +143,7 @@ const Navbar = () => {
                     className={`text-sm font-medium py-2 px-2 flex items-center justify-between rounded-md ${
                       location.pathname === l.to
                         ? "text-primary bg-primary/5"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                        : "text-foreground/80 hover:text-foreground hover:bg-muted/50"
                     }`}
                   >
                     {l.label}
@@ -155,7 +157,7 @@ const Navbar = () => {
                           className={`text-xs font-medium py-2 px-3 rounded-md transition-colors ${
                             location.pathname === sub.to
                               ? "text-primary bg-primary/5"
-                              : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                              : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
                           }`}
                         >
                           {sub.label}
