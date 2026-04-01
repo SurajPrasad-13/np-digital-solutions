@@ -18,12 +18,12 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const DarkModeInit = () => {
-  useEffect(() => {
-    document.documentElement.classList.add("dark");
-  }, []);
-  return null;
-};
+// const DarkModeInit = () => {
+//   useEffect(() => {
+//     document.documentElement.classList.add("dark");
+//   }, []);
+//   return null;
+// };
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -50,7 +50,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <DarkModeInit />
+        {/* <DarkModeInit /> */}
         <ScrollToTop />
         <AnimatedRoutes />
       </BrowserRouter>
