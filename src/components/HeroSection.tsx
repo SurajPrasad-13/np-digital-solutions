@@ -17,19 +17,19 @@ const HeroSection = () => {
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-background/70 dark:bg-background/20" />
+        <div className="absolute inset-0 bg-background/80 dark:bg-background/20" />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 30% 50%, hsl(252 85% 60% / 0.15) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 30% 50%, hsl(252 85% 60% / 0.15) 0%, transparent 10%)",
           }}
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 70% 30%, hsl(200 100% 50% / 0.1) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 70% 30%, hsl(200 100% 50% / 0.1) 0%, transparent 10%)",
           }}
         />
       </div>

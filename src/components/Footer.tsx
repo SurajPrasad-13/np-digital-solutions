@@ -62,7 +62,7 @@ const Footer = () => {
                 className="flex-1 px-4 py-2.5 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
               />
               <button className="gradient-button p-2.5">
-                <Send size={16} />
+                <Send size={20} />
               </button>
             </div>
           </div>
