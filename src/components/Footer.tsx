@@ -1,5 +1,6 @@
 import { Github, Twitter, Linkedin, Instagram, Send } from "lucide-react";
 import { Link } from "react-router-dom";
+import Logo from '../assets/NP2full.png'
 
 const Footer = () => {
   return (
@@ -8,7 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <Link to="/" className="font-heading font-bold text-xl mb-4 block">
-              <span className="gradient-text">NP</span> Digital
+              {/* <span className="gradient-text">NP</span> Digital */}
+              <img src={Logo} alt="" className=" h-16" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Building digital experiences that drive growth and transform businesses worldwide.

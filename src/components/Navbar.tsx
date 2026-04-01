@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
-import Logo from "../assets/NpDigital-logo.jpeg";
+import Logo from "../assets/NP1full.png";
+// import Logo from "../assets/NpLogo.jpeg";
 
 const links = [
   { label: "Home", to: "/" },
@@ -40,9 +41,12 @@ const Navbar = () => {
           : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-18">
         <Link to="/" className="font-heading font-bold text-xl">
-          <img src={Logo} alt="" className="w-20 h-20" />
+       
+
+          <img src={Logo} alt="" className=" h-12" />
+        
           {/* <span className="gradient-text">NP</span> Digital Solutions */}
         </Link>
 
