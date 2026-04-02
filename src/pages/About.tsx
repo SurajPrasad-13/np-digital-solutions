@@ -11,6 +11,7 @@ import Aakash from "../assets/Aakash.jpeg";
 import Pradeep from "../assets/Pradeep.png";
 import Pooja from "../assets/Pooja.jpg";
 import Suraj from "../assets/Suraj.png";
+import Pramod from '../assets/Director_Pramod.jpeg'
 
 const director = {
   name: "Pramod Saini",
@@ -29,7 +30,7 @@ const director = {
   ],
   footerQuote:
     "Leadership is not a position — it's an influence that creates change.",
-  image: "/src/assets/Director_Pramod.jpeg", // Replace with correct image path
+  image: Pramod,
 };
 
 const team = [
