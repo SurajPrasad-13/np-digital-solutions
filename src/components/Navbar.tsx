@@ -21,15 +21,15 @@ const links = [
   { label: "Products", to: "/products" },
   { label: "Testimonials", to: "/testimonials" },
   { label: "Careers", to: "/careers" },
-  { 
-    label: "Work", 
-    to: "/work",
-    submenu: [
-      { label: "Projects", to: "/work/projects" },
-      { label: "Portfolio", to: "/work/portfolio" },
-      { label: "Case-studies", to: "/work/case-studies" },
-    ]
-  },
+  // { 
+  //   label: "Work", 
+  //   to: "/work",
+  //   submenu: [
+  //     { label: "Projects", to: "/work/projects" },
+  //     { label: "Portfolio", to: "/work/portfolio" },
+  //     { label: "Case-studies", to: "/work/case-studies" },
+  //   ]
+  // },
   { label: "Contact Us", to: "/contact" },
 ];
 

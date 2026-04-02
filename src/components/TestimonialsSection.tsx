@@ -3,10 +3,10 @@ import { useRef, useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
-  { name: "Sarah Johnson", role: "CEO, TechStart", text: "NP Digital Solutions transformed our online presence completely. Their attention to detail and innovative approach exceeded all expectations.", rating: 5 },
-  { name: "Michael Chen", role: "Founder, GrowthLab", text: "The team delivered a stunning web application ahead of schedule. Their technical expertise and creative vision are truly world-class.", rating: 5 },
-  { name: "Emily Davis", role: "Marketing Director, Elevate", text: "Our SEO rankings skyrocketed after working with NP Digital. Professional, responsive, and results-driven — couldn't ask for more.", rating: 5 },
-  { name: "James Wilson", role: "CTO, CloudSync", text: "Outstanding mobile app development. They understood our vision perfectly and delivered an app our users absolutely love.", rating: 5 },
+  { name: "Sarah Verma", role: "CEO, TechStart", text: "NP Digital Solutions transformed our online presence completely. Their attention to detail and innovative approach exceeded all expectations.", rating: 5 },
+  { name: "Michael Joshi", role: "Founder, GrowthLab", text: "The team delivered a stunning web application ahead of schedule. Their technical expertise and creative vision are truly world-class.", rating: 5 },
+  { name: "Emily Kumawat", role: "Marketing Director, Elevate", text: "Our SEO rankings skyrocketed after working with NP Digital. Professional, responsive, and results-driven — couldn't ask for more.", rating: 5 },
+  { name: "Jamsedh Kumar", role: "CTO, CloudSync", text: "Outstanding mobile app development. They understood our vision perfectly and delivered an app our users absolutely love.", rating: 5 },
 ];
 
 const TestimonialsSection = () => {

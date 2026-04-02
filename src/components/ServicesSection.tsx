@@ -1,14 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Figma, Search, Globe, Smartphone, Megaphone, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link
 import appDesigner from "@/assets/app-designer.png";
 
 const services = [
-  { icon: Figma, title: "UI/UX Design", desc: "Beautiful, intuitive interfaces that delight users and drive engagement across all platforms." },
-  { icon: Search, title: "SEO Optimization", desc: "Data-driven strategies to boost your search rankings and organic traffic." },
-  { icon: Globe, title: "Web Development", desc: "High-performance websites built with cutting-edge technologies for speed and scale." },
-  { icon: Smartphone, title: "App Development", desc: "Native and cross-platform mobile apps that deliver seamless user experiences." },
-  { icon: Megaphone, title: "Digital Marketing", desc: "Comprehensive campaigns that amplify your brand and convert audiences." },
+  { icon: Figma, title: "UI/UX Design", desc: "Beautiful, intuitive interfaces that delight users and drive engagement across all platforms.", link: "/services/ui-ux-design" },
+  { icon: Search, title: "SEO Optimization", desc: "Data-driven strategies to boost your search rankings and organic traffic.", link: "/services/seo-optimization" },
+  { icon: Globe, title: "Web Development", desc: "High-performance websites built with cutting-edge technologies for speed and scale.", link: "/services/web-development" },
+  { icon: Smartphone, title: "App Development", desc: "Native and cross-platform mobile apps that deliver seamless user experiences.", link: "/services/app-development" },
+  { icon: Megaphone, title: "Digital Marketing", desc: "Comprehensive campaigns that amplify your brand and convert audiences.", link: "/services/digital-marketing" },
 ];
 
 const ServicesSection = () => {
@@ -59,10 +60,9 @@ const ServicesSection = () => {
                 <s.icon className="text-primary" size={26} />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-3">{s.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5">{s.desc}</p>
-              <button className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all">
+              <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5">{s.desc}</p>              <Link to={s.link} className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all">
                 Learn More <ArrowRight size={16} />
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>

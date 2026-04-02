@@ -30,9 +30,9 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, x: -1000 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 3, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold leading-tight mb-6"
           >
             We Build Digital Experiences{" "}
@@ -52,7 +52,7 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.45 }}
+            transition={{ duration: 1, delay: 0.45 }}
             className="flex flex-col sm:flex-row items-start gap-4"
           >
             <Link to="/contact" className="gradient-button px-8 py-3.5 text-base">
@@ -69,7 +69,7 @@ const HeroSection = () => {
 
         {/* Hero Illustration */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: 60 }}
+          initial={{ opacity: 0, scale: 0.8, x: 100 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex items-center justify-center"
