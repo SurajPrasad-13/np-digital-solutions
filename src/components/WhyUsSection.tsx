@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Zap, Shield, Users, TrendingUp, Palette, Clock } from "lucide-react";
+import teamPresenting from "@/assets/team-presenting.png";
 
 const reasons = [
   { icon: Zap, title: "Lightning Fast", text: "We deliver pixel-perfect results at speed without compromising quality." },
@@ -31,22 +31,44 @@ const WhyUsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reasons.map((r, i) => (
-            <motion.div
-              key={r.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card-hover p-6 md:p-8 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <r.icon className="text-primary" size={24} />
-              </div>
-              <h3 className="font-heading font-semibold text-lg mb-2">{r.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{r.text}</p>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+          {/* Illustration */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="flex justify-center"
+          >
+            <motion.img
+              src={teamPresenting}
+              alt="Team presenting digital solutions"
+              width={1024}
+              height={768}
+              loading="lazy"
+              className="w-full max-w-md lg:max-w-lg drop-shadow-xl"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </motion.div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {reasons.map((r, i) => (
+              <motion.div
+                key={r.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="glass-card-hover p-5 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                  <r.icon className="text-primary" size={20} />
+                </div>
+                <h3 className="font-heading font-semibold text-base mb-1">{r.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{r.text}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

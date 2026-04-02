@@ -1,10 +1,42 @@
 import { Github, Twitter, Linkedin, Instagram, Send } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Logo from '../assets/NP2full.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-card border-t border-border relative overflow-hidden">
+      {/* Animated shapes */}
+      <motion.div
+        className="absolute top-8 left-8 w-24 h-24 rounded-full border-2 border-primary/30 bg-primary/15"
+        animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/2 right-12 w-36 h-36 rounded-full border-2 border-accent/25 bg-accent/10"
+        animate={{ y: [0, 15, 0], scale: [1, 1.15, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.div
+        className="absolute bottom-12 left-1/3 w-20 h-20 rounded-2xl border-2 border-primary/25 bg-primary/10 rotate-45"
+        animate={{ rotate: [45, 90, 45], y: [0, -12, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      />
+      <motion.div
+        className="absolute top-16 right-1/3 w-14 h-14 rounded-xl border-2 border-accent/30 bg-accent/15"
+        animate={{ y: [0, 18, 0], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 right-8 w-28 h-28 rounded-full border-2 border-primary/20 bg-primary/10"
+        animate={{ scale: [1, 1.2, 1], x: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+      />
+      <motion.div
+        className="absolute top-1/3 left-1/4 w-10 h-10 rounded-full bg-primary/25"
+        animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+      />
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
