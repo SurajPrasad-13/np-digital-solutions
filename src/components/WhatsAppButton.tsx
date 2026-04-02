@@ -1,5 +1,15 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";import { MessageCircle, Linkedin, Instagram, Facebook, X, Share2, MessageSquare, Phone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  MessageCircle,
+  Linkedin,
+  Instagram,
+  Facebook,
+  X,
+  Share2,
+  MessageSquare,
+  Phone,
+} from "lucide-react";
 
 const WhatsAppButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,19 +23,19 @@ const WhatsAppButton = () => {
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/np-digital-solutions-a8b162400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BkdYPMSIaQ%2FihXFNFUDmMaw%3D%3D",
       color: "bg-[#0077B5]",
       label: "LinkedIn",
     },
     {
       icon: Instagram,
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/npdigitalsolutions001/",
       color: "bg-[#E4405F]",
       label: "Instagram",
     },
     {
       icon: Facebook,
-      href: "https://facebook.com",
+      href: "https://www.facebook.com/profile.php?id=61574331538312",
       color: "bg-[#1877F2]",
       label: "Facebook",
     },
@@ -59,17 +69,29 @@ const WhatsAppButton = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-colors z-50 ${
-          isOpen ? "bg-muted text-muted-foreground" : "bg-primary text-primary-foreground animate-pulse-glow"
+          isOpen
+            ? "bg-muted text-muted-foreground"
+            : "bg-primary text-primary-foreground animate-pulse-glow"
         }`}
         aria-label="Toggle social menu"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
-            <motion.div key="close" initial={{ opacity: 0, rotate: -90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: 90 }}>
+            <motion.div
+              key="close"
+              initial={{ opacity: 0, rotate: -90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: 90 }}
+            >
               <X size={24} />
             </motion.div>
           ) : (
-            <motion.div key="open" initial={{ opacity: 0, rotate: 90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: -90 }}>
+            <motion.div
+              key="open"
+              initial={{ opacity: 0, rotate: 90 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              exit={{ opacity: 0, rotate: -90 }}
+            >
               <Share2 size={24} />
             </motion.div>
           )}
@@ -83,7 +105,8 @@ const WhatsAppButton = () => {
             {socialLinks.map((social, index) => {
               // Calculate angle for each icon
               const angle =
-                startAngle + (endAngle - startAngle) * (index / (socialLinks.length - 1));
+                startAngle +
+                (endAngle - startAngle) * (index / (socialLinks.length - 1));
               const radian = (angle * Math.PI) / 180;
               const x = Math.cos(radian) * radius;
               const y = Math.sin(radian) * radius;

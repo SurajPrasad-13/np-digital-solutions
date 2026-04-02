@@ -2,8 +2,47 @@ import { Github, Twitter, Linkedin, Instagram, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from '../assets/NP2full.png'
+import {
+  MessageCircle,
+  Facebook,
+  X,
+  Phone,
+} from "lucide-react";
 
 const Footer = () => {
+
+  const socialLinks = [
+      {
+        icon: MessageCircle,
+        href: "https://wa.me/9509167614",
+        color: "bg-[#25D366]",
+        label: "WhatsApp",
+      },
+      {
+        icon: Linkedin,
+        href: "https://www.linkedin.com/in/np-digital-solutions-a8b162400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BkdYPMSIaQ%2FihXFNFUDmMaw%3D%3D",
+        color: "bg-[#0077B5]",
+        label: "LinkedIn",
+      },
+      {
+        icon: Instagram,
+        href: "https://www.instagram.com/npdigitalsolutions001/",
+        color: "bg-[#E4405F]",
+        label: "Instagram",
+      },
+      {
+        icon: Facebook,
+        href: "https://www.facebook.com/profile.php?id=61574331538312",
+        color: "bg-[#1877F2]",
+        label: "Facebook",
+      },
+      {
+        icon: Phone,
+        href: "tel:+919509167614",
+        color: "bg-gray-700",
+        label: "Call",
+      },
+    ];
   return (
     <footer className="bg-card border-t border-border relative overflow-hidden">
       {/* Animated shapes */}
@@ -47,12 +86,22 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Building digital experiences that drive growth and transform businesses worldwide.
             </p>
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
                 <a key={i} href="#" className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all">
                   <Icon size={16} />
                 </a>
               ))}
+            </div> */}
+            <div className="flex gap-3">
+              {
+                socialLinks.map((social,index)=>{
+                  return(
+                    <a className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" key={index} href={social.href} target="_blank" rel="noopener noreferrer"> <social.icon size={16} />
+                </a>
+                  )
+                })
+              }
             </div>
           </div>
 
