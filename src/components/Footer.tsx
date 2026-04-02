@@ -1,10 +1,37 @@
 import { Github, Twitter, Linkedin, Instagram, Send } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Logo from '../assets/NP2full.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-card border-t border-border relative overflow-hidden">
+      {/* Animated shapes */}
+      <motion.div
+        className="absolute top-10 left-10 w-20 h-20 rounded-full bg-primary/10 blur-xl"
+        animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-1/2 right-16 w-32 h-32 rounded-full bg-accent/10 blur-2xl"
+        animate={{ y: [0, 15, 0], scale: [1, 1.2, 1] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      />
+      <motion.div
+        className="absolute bottom-10 left-1/3 w-16 h-16 rounded-2xl bg-primary/8 blur-lg rotate-45"
+        animate={{ rotate: [45, 90, 45], y: [0, -12, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+      />
+      <motion.div
+        className="absolute top-20 right-1/3 w-10 h-10 rounded-xl bg-accent/15 blur-md"
+        animate={{ y: [0, 18, 0], opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 right-10 w-24 h-24 rounded-full bg-primary/5 blur-xl"
+        animate={{ scale: [1, 1.3, 1], x: [0, -10, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+      />
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
