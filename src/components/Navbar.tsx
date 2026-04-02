@@ -12,8 +12,10 @@ const links = [
     to: "/services",
     submenu: [
       { label: "Web Development", to: "/services/web-development" },
-      { label: "Solution", to: "/services/solution" },
-      { label: "Industries", to: "/services/industries" },
+      { label: "App Development", to: "/services/app-development" },
+      { label: "UI/UX Design", to: "/services/ui-ux-design" },
+      { label: "SEO Optimization", to: "/services/seo-optimization" },
+      { label: "Digital Marketing", to: "/services/digital-marketing" },
     ]
   },
   { label: "Products", to: "/products" },
