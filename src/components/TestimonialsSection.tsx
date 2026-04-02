@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
@@ -62,6 +62,13 @@ const TestimonialsSection = () => {
   const prev = () =>
     setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 7000); // Change slide every 5 seconds
+    return () => clearInterval(interval);
+  }, [current]);
+
   return (
     <section id="testimonials" className="section-padding" ref={ref}>
       <div className="max-w-4xl mx-auto">
@@ -79,13 +86,13 @@ const TestimonialsSection = () => {
           </h2>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2 }}
           className="relative"
         >
-          <div className="glass-card p-8 md:p-12 text-center">
+          <div className=" p-8 md:p-12 text-center border-4 border-green-300">
             <div className="flex justify-center gap-1 mb-6">
               {Array.from({ length: testimonials[current].rating }).map(
                 (_, i) => (
@@ -134,7 +141,42 @@ const TestimonialsSection = () => {
               <ChevronRight size={20} />
             </button>
           </div>
-        </motion.div>
+        </motion.div> */}
+        <AnimatePresence mode="wait">
+  <motion.div
+    key={current}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+transition={{ duration: 0.5, ease: "easeInOut" }}    className="glass-card p-8 md:p-12 text-center"
+  >
+    <div className="flex justify-center gap-1 mb-6">
+      {Array.from({ length: testimonials[current].rating }).map((_, i) => (
+        <Star
+          key={i}
+          size={20}
+          className="text-yellow-400 fill-yellow-400"
+        />
+      ))}
+    </div>
+
+    <p className="text-lg md:text-xl leading-relaxed mb-8 text-foreground/90 italic">
+      "{testimonials[current].text}"
+    </p>
+
+    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3 font-heading font-bold text-primary text-lg">
+      {testimonials[current].name[0]}
+    </div>
+
+    <h4 className="font-heading font-semibold">
+      {testimonials[current].name}
+    </h4>
+
+    <p className="text-muted-foreground text-sm">
+      {testimonials[current].role}
+    </p>
+  </motion.div>
+</AnimatePresence>
       </div>
     </section>
   );
