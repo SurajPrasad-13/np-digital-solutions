@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative mt-16 sm:mt-0 min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
