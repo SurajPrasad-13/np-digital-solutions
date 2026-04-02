@@ -20,7 +20,7 @@ const director = {
   quote:
     "We don't just create technology — we create growth, opportunity, and success.",
   description: [
-    "With 15+ years of global tech experience, Abhay believes in building futuristic digital ecosystems.",
+    "With 5+ years of global tech experience, Pramod believes in building futuristic digital ecosystems.",
     "He has worked with startups, mid-scale companies, and global enterprises, helping them adopt modern technologies such as Cloud, AI Automation, Full-Stack Engineering, Data-Driven Architecture, Cybersecurity, and Scalable Digital Platforms. His focus is on building systems that are fast, reliable, future-ready, and capable of supporting large-scale growth.",
   ],
   stats: [
