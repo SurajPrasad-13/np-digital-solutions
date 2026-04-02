@@ -13,8 +13,8 @@ import Pooja from "../assets/Pooja.jpg";
 import Suraj from "../assets/Suraj.png";
 
 const director = {
-  name: "Abhay Singh",
-  role: "CEO & Founder — ATS Global Tech",
+  name: "Pramod Saini",
+  role: "Director,Np Digital Solutions",
   badge: "Leadership • Strategy • Innovation",
   quote:
     "We don't just create technology — we create growth, opportunity, and success.",
@@ -285,7 +285,7 @@ const About = () => {
         {/* Director Section */}
         <section className="section-padding bg-secondary/10">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -315,15 +315,15 @@ const About = () => {
 
                 <div className="relative mb-6">
                   <div className="absolute -left-6 top-0 bottom-0 w-1.5 bg-primary rounded-full" />
-                  <h3 className="text-2xl md:text-3xl font-heading  italic leading-tight text-foreground/90">
+                  <h3 className="text-xl md:text-2xl  lg:text-3xl font-heading  italic leading-tight text-foreground/90">
                     "{director.quote}"
                   </h3>
                 </div>
 
-                <h2 className="text-4xl font-heading font-bold text-primary mb-2">
+                <h2 className=" text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-primary mb-2">
                   {director.name}
                 </h2>
-                <p className="text-xl font-heading font-semibold text-foreground mb-4">
+                <p className=" md:text-xl font-heading font-semibold text-foreground mb-4">
                   {director.role}
                 </p>
 
