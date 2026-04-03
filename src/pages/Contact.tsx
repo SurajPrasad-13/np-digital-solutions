@@ -158,24 +158,19 @@ const Contact = () => {
                   placeholder="Phone Number (optional)"
                   className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
                 />
-
-                <input
-                  list="subject-suggestions"
-                  type="text"
-                  name="subject"
+                <select
+                  id="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Subject"
                   className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
-                />
-
-                <datalist id="subject-suggestions">
-                  <option value="Web Development" />
-                  <option value="App Development" />
-                  <option value="UI/UX Design" />
-                  <option value="SEO Optimization" />
-                  <option value="Digital Marketing" />
-                </datalist>
+                >
+                  <option value="Web-Development">Web-Development</option>
+                  <option value="App-Development">App-Development</option>
+                  <option value="SEO">SEO</option>
+                  <option value="Digital-Marketing">Digital-Marketing</option>
+                  <option value="UI/UX-Design">UI/UX-Design</option>
+                  <option value="Other">Other</option>
+                </select>
 
                 <textarea
                   name="message"
@@ -251,7 +246,6 @@ const Contact = () => {
                   Follow Us
                 </h4>
                 <div className="flex gap-3">
-               
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
