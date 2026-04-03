@@ -8,7 +8,7 @@ const ContactPopup = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 15000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,29 +23,24 @@ const ContactPopup = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-md bg-[#F0FDF4] rounded-3xl shadow-2xl border border-emerald-100 overflow-hidden"
+            className="relative w-full max-w-md bg-background/40 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-white/10 overflow-hidden"
           >
+            {/* Fluid Background Decorations */}
+            <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/25 rounded-full blur-[80px] pointer-events-none animate-pulse" />
+            <div 
+              className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent/20 rounded-full blur-[80px] pointer-events-none animate-pulse" 
+              style={{ animationDelay: "2s" }} 
+            />
+
             <button
               onClick={closePopup}
-              className="absolute top-4 right-4 p-1.5 rounded-full bg-emerald-100/80 backdrop-blur-sm text-emerald-900 hover:bg-emerald-200 transition-colors z-20"
+              className="absolute top-3 right-3 p-1.5 rounded-full bg-white/10 text-foreground hover:bg-white/20 backdrop-blur-md border border-white/10 transition-colors z-50"
             >
               <X size={18} />
             </button>
 
-            <div 
-              className="max-h-[90vh] overflow-y-auto p-6 pt-10"
-              style={{ 
-                scrollbarWidth: 'none', 
-                msOverflowStyle: 'none',
-                WebkitOverflowScrolling: 'touch'
-              }}
-            >
-              <style dangerouslySetInnerHTML={{__html: `
-                .max-h-\[90vh\]::-webkit-scrollbar {
-                  display: none;
-                }
-              `}} />
-              <h2 className="text-xl font-bold text-[#065F46] text-center mb-4">Contact Us</h2>
+            <div className="p-6 relative z-10">
+              <h2 className="text-xl font-bold  text-center mb-4">Contact Us</h2>
               
               <form 
                 className="space-y-2.5" 
@@ -55,56 +50,56 @@ const ContactPopup = () => {
                 }}
               >
                 <div>
-                  <label className="block text-xs font-semibold text-[#065F46] mb-1 ml-1">Full Name</label>
+                  <label className="block text-xs font-semibold text-foreground mb-1 ml-1">Full Name</label>
                   <input
                     type="text"
                     placeholder="Enter Full Name"
                     required
-                    className="w-full px-4 py-2 rounded-xl bg-white border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm"
+                    className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm placeholder:text-muted-foreground/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#065F46] mb-1 ml-1">Email</label>
+                  <label className="block text-xs font-semibold text-foreground mb-1 ml-1">Email</label>
                   <input
                     type="email"
                     placeholder="Enter Email"
                     required
-                    className="w-full px-4 py-2 rounded-xl bg-white border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm"
+                    className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm placeholder:text-muted-foreground/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#065F46] mb-1 ml-1">Phone</label>
+                  <label className="block text-xs font-semibold text-foreground mb-1 ml-1">Phone</label>
                   <input
                     type="tel"
                     placeholder="Enter Phone Number"
-                    className="w-full px-4 py-2 rounded-xl bg-white border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm"
+                    className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm placeholder:text-muted-foreground/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#065F46] mb-1 ml-1">Company</label>
+                  <label className="block text-xs font-semibold text-foreground mb-1 ml-1">Company</label>
                   <input
                     type="text"
                     placeholder="Enter Company Name"
-                    className="w-full px-4 py-2 rounded-xl bg-white border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm"
+                    className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm placeholder:text-muted-foreground/50"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#065F46] mb-1 ml-1">Project Details</label>
+                  <label className="block text-xs font-semibold text-foreground mb-1 ml-1">Project Details</label>
                   <textarea
                     placeholder="Tell us about your project..."
                     rows={2}
                     required
-                    className="w-full px-4 py-2 rounded-xl bg-white border border-emerald-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-sm resize-none"
+                    className="w-full px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm resize-none placeholder:text-muted-foreground/50"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#0D9488] hover:bg-[#0F766E] text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg shadow-teal-900/10 mt-4"
+                  className="w-full gradient-button font-semibold py-3 rounded-xl flex items-center justify-center gap-2 transition-all mt-4"
                 >
                   <Send size={16} /> Send Message
                 </button>

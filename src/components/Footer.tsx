@@ -8,43 +8,79 @@ import {
   X,
   Phone,
 } from "lucide-react";
+import { useState } from "react"; // 🔥 ADDED
 
 const Footer = () => {
 
+  const [email, setEmail] = useState(""); // 🔥 ADDED
+  const [loading, setLoading] = useState(false); // 🔥 ADDED
+
+  // 🔥 ADDED
+  const handleSubscribe = async () => {
+    if (!email) {
+      alert("Please enter email");
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("https://api.npdigitalsolution.com/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const data = await res.json();
+
+      alert(data.message || data.detail);
+      setEmail("");
+
+    } catch (error) {
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const socialLinks = [
-      {
-        icon: MessageCircle,
-        href: "https://wa.me/9509167614",
-        color: "bg-[#25D366]",
-        label: "WhatsApp",
-      },
-      {
-        icon: Linkedin,
-        href: "https://www.linkedin.com/in/np-digital-solutions-a8b162400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BkdYPMSIaQ%2FihXFNFUDmMaw%3D%3D",
-        color: "bg-[#0077B5]",
-        label: "LinkedIn",
-      },
-      {
-        icon: Instagram,
-        href: "https://www.instagram.com/npdigitalsolutions001/",
-        color: "bg-[#E4405F]",
-        label: "Instagram",
-      },
-      {
-        icon: Facebook,
-        href: "https://www.facebook.com/profile.php?id=61574331538312",
-        color: "bg-[#1877F2]",
-        label: "Facebook",
-      },
-      {
-        icon: Phone,
-        href: "tel:+919509167614",
-        color: "bg-gray-700",
-        label: "Call",
-      },
-    ];
+    {
+      icon: MessageCircle,
+      href: "https://wa.me/9509167614",
+      color: "bg-[#25D366]",
+      label: "WhatsApp",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/np-digital-solutions-a8b162400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BkdYPMSIaQ%2FihXFNFUDmMaw%3D%3D",
+      color: "bg-[#0077B5]",
+      label: "LinkedIn",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/npdigitalsolutions001/",
+      color: "bg-[#E4405F]",
+      label: "Instagram",
+    },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/profile.php?id=61574331538312",
+      color: "bg-[#1877F2]",
+      label: "Facebook",
+    },
+    {
+      icon: Phone,
+      href: "tel:+919509167614",
+      color: "bg-gray-700",
+      label: "Call",
+    },
+  ];
+
   return (
     <footer className="bg-card border-t border-border relative overflow-hidden">
+      
       {/* Animated shapes */}
       <motion.div
         className="absolute top-8 left-8 w-24 h-24 rounded-full border-2 border-primary/30 bg-primary/15"
@@ -76,35 +112,36 @@ const Footer = () => {
         animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
       />
+
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          
+          {/* Logo */}
           <div>
             <Link to="/" className="font-heading font-bold text-xl mb-4 block">
-              {/* <span className="gradient-text">NP</span> Digital */}
               <img src={Logo} alt="" className=" h-16" />
             </Link>
+
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Building digital experiences that drive growth and transform businesses worldwide.
             </p>
-            {/* <div className="flex gap-3">
-              {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all">
-                  <Icon size={16} />
+
+            <div className="flex gap-3">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                >
+                  <social.icon size={16} />
                 </a>
               ))}
-            </div> */}
-            <div className="flex gap-3">
-              {
-                socialLinks.map((social,index)=>{
-                  return(
-                    <a className="w-9 h-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all" key={index} href={social.href} target="_blank" rel="noopener noreferrer"> <social.icon size={16} />
-                </a>
-                  )
-                })
-              }
             </div>
           </div>
 
+          {/* Services */}
           <div>
             <h4 className="font-heading font-semibold mb-4">Services</h4>
             <ul className="space-y-2.5">
@@ -116,6 +153,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Company */}
           <div>
             <h4 className="font-heading font-semibold mb-4">Company</h4>
             <ul className="space-y-2.5">
@@ -133,24 +171,37 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Newsletter */}
           <div>
             <h4 className="font-heading font-semibold mb-4">Newsletter</h4>
-            <p className="text-sm text-muted-foreground mb-4">Get the latest insights delivered to your inbox.</p>
+            <p className="text-sm text-muted-foreground mb-4">
+              Get the latest insights delivered to your inbox.
+            </p>
+
             <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="your@email.com"
+                value={email} // 🔥 ADDED
+                onChange={(e) => setEmail(e.target.value)} // 🔥 ADDED
                 className="flex-1 px-4 py-2.5 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
               />
-              <button className="gradient-button p-2.5">
-                <Send size={20} />
+
+              <button
+                onClick={handleSubscribe} // 🔥 ADDED
+                disabled={loading} // 🔥 ADDED
+                className="gradient-button p-2.5"
+              >
+                {loading ? "..." : <Send size={20} />} {/* 🔥 UPDATED */}
               </button>
             </div>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 text-center">
-          <p className="text-sm text-muted-foreground">© 2026 NP Digital Solutions. All rights reserved.</p>
+          <p className="text-sm text-muted-foreground">
+            © 2026 NP Digital Solutions. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
