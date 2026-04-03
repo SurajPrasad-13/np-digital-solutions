@@ -306,7 +306,7 @@ const About = () => {
 
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5} }}
                 viewport={{ once: true }}
                 className="flex flex-col"
               >
@@ -324,7 +324,7 @@ const About = () => {
                 <h2 className=" text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-primary mb-2">
                   {director.name}
                 </h2>
-                <p className=" md:text-xl font-heading font-semibold text-foreground mb-4">
+                <p className=" md:text-xl font-heading text-primary mb-4">
                   {director.role}
                 </p>
 
