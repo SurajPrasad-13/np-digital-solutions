@@ -9,6 +9,7 @@ import {
   Twitter,
   Linkedin,
   Instagram,
+  Facebook,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,6 +17,29 @@ import PageTransition from "@/components/PageTransition";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHeader from "@/components/PageHeader";
 import { useState } from "react"; // 🔥 ADDED
+
+const socialLinks = [
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/np-digital-solutions-a8b162400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BkdYPMSIaQ%2FihXFNFUDmMaw%3D%3D",
+    label: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/npdigitalsolutions001/",
+    label: "Instagram",
+  },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/profile.php?id=61574331538312",
+    label: "Facebook",
+  },
+  {
+    icon: Github,
+    href: "https://github.com/npdigitalsolutions001",
+    label: "Facebook",
+  },
+];
 
 const Contact = () => {
   // 🔥 ADDED
@@ -227,13 +251,16 @@ const Contact = () => {
                   Follow Us
                 </h4>
                 <div className="flex gap-3">
-                  {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
+               
+                  {socialLinks.map((social, index) => (
                     <a
-                      key={i}
-                      href="#"
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
                     >
-                      <Icon size={18} />
+                      <social.icon size={18} />
                     </a>
                   ))}
                 </div>
