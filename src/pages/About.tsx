@@ -394,7 +394,7 @@ const About = () => {
                         <img
                           src={m.image}
                           alt={m.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover object-top "
                         />
                       ) : (
                         m.initials
