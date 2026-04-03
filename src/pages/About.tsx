@@ -15,7 +15,7 @@ import Pramod from '../assets/Director_Pramod.jpeg'
 
 const director = {
   name: "Pramod Saini",
-  role: "Director,Np Digital Solutions",
+  role: "Director - NP Digital Solutions",
   badge: "Leadership • Strategy • Innovation",
   quote:
     "We don't just create technology — we create growth, opportunity, and success.",

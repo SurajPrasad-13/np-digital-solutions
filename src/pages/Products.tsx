@@ -15,7 +15,7 @@ const products = [
     tagline: "Real-time business intelligence",
     desc: "Powerful analytics dashboard with real-time insights, custom reports, and AI-powered recommendations for data-driven decisions.",
     features: ["Real-time dashboards", "Custom report builder", "AI insights", "Team collaboration"],
-    price: "$49/mo",
+    price:  "4999 Rs/mo",
     color: "hsl(252, 85%, 60%)",
   },
   {
