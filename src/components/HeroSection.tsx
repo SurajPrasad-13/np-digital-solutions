@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative mt-16 sm:mt-0 min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full bg-primary/15 blur-[100px] animate-float" />

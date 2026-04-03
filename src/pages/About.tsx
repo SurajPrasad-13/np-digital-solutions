@@ -7,16 +7,134 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Aakash from "../assets/Aakash.jpeg";
+import Pradeep from "../assets/Pradeep.png";
+import Pooja from "../assets/Pooja.jpg";
+import Suraj from "../assets/Suraj.png";
+import Pramod from '../assets/Director_Pramod.jpeg'
+
+const director = {
+  name: "Pramod Saini",
+  role: "Director - NP Digital Solutions",
+  badge: "Leadership • Strategy • Innovation",
+  quote:
+    "We don't just create technology — we create growth, opportunity, and success.",
+  description: [
+    "With 5+ years of global tech experience, Pramod believes in building futuristic digital ecosystems.",
+    "He has worked with startups, mid-scale companies, and global enterprises, helping them adopt modern technologies such as Cloud, AI Automation, Full-Stack Engineering, Data-Driven Architecture, Cybersecurity, and Scalable Digital Platforms. His focus is on building systems that are fast, reliable, future-ready, and capable of supporting large-scale growth.",
+  ],
+  stats: [
+    { label: "Years Leading", value: "5+" },
+    { label: "Projects Done", value: "10+" },
+    { label: "Enterprise Clients", value: "25+" },
+  ],
+  footerQuote:
+    "Leadership is not a position — it's an influence that creates change.",
+  image: Pramod,
+};
 
 const team = [
-  { name: "Pramod Saini", role: "Director", initials: "PS" },
-  { name: "Pooja Morya", role: "Human Resource", initials: "PM" },
-  { name: " Kamlesh", role: "React Developer", initials: "KS" },
-  { name: "Suraj Prasad", role: "Lead Designer", initials: "SP" },
-  { name: "Aakash Kumawat", role: "Python Developer", initials: "AK" },
-  // { name: "Sneha Gupta", role: "Marketing Head", initials: "SG" },
-  // { name: "Arjun Mehta", role: "CTO", initials: "AM" },
-  // { name: "Ananya Roy", role: "SEO Specialist", initials: "AR" },
+  {
+    name: "Pooja Mourya",
+    role: "HR Manager",
+    initials: "PM",
+    description:
+      "Experienced HR professional specializing in talent acquisition and employee engagement.",
+    skills: [
+      "Recruitment",
+      "Employee Relations",
+      "Onboarding",
+      "HR Policies",
+      "Communication",
+      "Conflict Resolution",
+      "Organizational Development",
+    ],
+    image: Pooja,
+  },
+  {
+    name: "Aakash Kumawat",
+    role: "Senior Backend Developer",
+    initials: "AK",
+    description:
+      "Enterprise backend engineer with expertise in distributed systems & APIs.",
+    skills: [
+      "Python",
+      "Django",
+      "Flask",
+      "RESTful APIs",
+      "Microservices",
+      "Database Design",
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Linux",
+    ],
+    image: Aakash,
+  },
+  {
+    name: "Suraj Prasad",
+    role: "Frontend Developer",
+    initials: "SP",
+    description:
+      "Passionate frontend developer skilled in React and modern web technologies.",
+    skills: [
+      "React",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "UI/UX",
+      "Responsive Design",
+      "Git",
+      "Tailwind",
+      "Redux",
+      "Sass",
+      "TypeScript",
+    ],
+    image: Suraj,
+  },
+  {
+    name: "Pradeep Kumawat",
+    role: "Frontend Developer",
+    initials: "PK",
+    description:
+      "Passionate frontend developer skilled in React and modern web technologies.",
+    skills: [
+      "React",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "UI/UX",
+      "Responsive Design",
+      "Git",
+      "Tailwind",
+      "Redux",
+      "Sass",
+    ],
+    image: Pradeep,
+  },
+  {
+    name: "Kamal Sharma",
+    role: "Frontend Developer",
+    initials: "KS",
+    description:
+      "Skilled frontend developer with a passion for building responsive and user-friendly web applications.",
+    skills: [
+      "React",
+      "Redux",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind",
+      "CSS",
+      "HTML",
+      "UI/UX",
+      "Responsive Design",
+      "Git",
+      "GitHub",
+      "Sass",
+    ],
+    image: "/placeholder.svg",
+  },
 ];
 
 const timeline = [
@@ -165,13 +283,93 @@ const About = () => {
           </div>
         </section>
 
+        {/* Director Section */}
+        <section className="section-padding bg-secondary/10">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative max-w-md mx-auto lg:mx-0"
+              >
+                <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+                  <img
+                    src={director.image}
+                    alt={director.name}
+                    className="w-full h-full object-cover bg-primary/5"
+                  />
+                </div>
+                {/* <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10" />
+                <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10" /> */}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex flex-col"
+              >
+                <div className="inline-block px-4 py-1.5 rounded-full bg-white border border-border text-xs font-medium text-muted-foreground mb-6 self-start shadow-sm">
+                  {director.badge}
+                </div>
+
+                <div className="relative mb-6">
+                  <div className="absolute -left-6 top-0 bottom-0 w-1.5 bg-primary rounded-full" />
+                  <h3 className="text-xl md:text-2xl  lg:text-3xl font-heading  italic leading-tight text-foreground/90">
+                    "{director.quote}"
+                  </h3>
+                </div>
+
+                <h2 className=" text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-primary mb-2">
+                  {director.name}
+                </h2>
+                <p className=" md:text-xl font-heading font-semibold text-foreground mb-4">
+                  {director.role}
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  {director.description.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-muted-foreground leading-relaxed"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                  {director.stats.map((stat, i) => (
+                    <div key={i} className="glass-card p-4 text-center">
+                      <div className="text-3xl font-heading font-bold text-primary mb-1">
+                        {stat.value}
+                      </div>
+                      <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="relative pl-6">
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary/30" />
+                  <p className="text-sm italic text-muted-foreground">
+                    "{director.footerQuote}"
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Team */}
         <section className="section-padding" ref={teamRef}>
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={teamInView ? { opacity: 1, y: 0 } : {}}
-              className="text-center mb-16"
+              className="text-center mb-12 "
             >
               <span className="text-primary text-sm font-semibold tracking-wider uppercase">
                 Our Team
@@ -180,22 +378,55 @@ const About = () => {
                 Meet the <span className="gradient-text">Experts</span>
               </h2>
             </motion.div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8">
               {team.map((m, i) => (
                 <motion.div
                   key={m.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={teamInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: i * 0.08 }}
-                  className="glass-card-hover p-5 text-center"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={teamInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white rounded-[1rem] p-4 shadow-xl shadow-gray-100 border border-gray-100 flex flex-col items-center text-center relative overflow-hidden group hover:shadow-2xl transition-all duration-300"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 font-heading font-bold text-primary text-xl">
-                    {m.initials}
+                  <div className="w-24 h-24 rounded-full overflow-hidden mb-2 border-4 border-primary/70">
+                    <div className="w-full h-full bg-primary/5 flex items-center justify-center font-heading font-bold text-primary text-2xl">
+                      {m.image && m.image !== "/placeholder.svg" ? (
+                        <img
+                          src={m.image}
+                          alt={m.name}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        m.initials
+                      )}
+                    </div>
                   </div>
-                  <h4 className="font-heading font-semibold text-sm">
+
+                  <h4 className="font-heading font-bold  mb-1 text-gray-900">
                     {m.name}
                   </h4>
-                  <p className="text-muted-foreground text-xs mt-1">{m.role}</p>
+                  <p className="text-primary font-medium text-xs mb-4">
+                    {m.role}
+                  </p>
+
+                  <p className="text-gray-500 text-xs leading-relaxed mb-6">
+                    {m.description}
+                  </p>
+
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
+                    {m.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-[10px] font-medium"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <button className="gradient-button w-full py-3 rounded-xl font-medium mt-auto">
+                    View Portfolio
+                  </button>
                 </motion.div>
               ))}
             </div>

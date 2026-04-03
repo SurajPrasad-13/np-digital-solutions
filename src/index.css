@@ -107,7 +107,7 @@
     @apply text-primary-foreground rounded-2xl font-semibold shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-xl hover:shadow-primary/40 hover:scale-105;
   }
   .section-padding {
-    @apply py-20 md:py-28 px-4 md:px-8;
+    @apply py-16 md:py-20 px-4 md:px-8;
   }
   .neon-glow {
     box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1);

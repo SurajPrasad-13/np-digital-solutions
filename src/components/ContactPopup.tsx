@@ -8,7 +8,7 @@ const ContactPopup = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 5000);
+    }, 15000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,16 +23,28 @@ const ContactPopup = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-md bg-[#F0FDF4] rounded-3xl shadow-2xl border border-emerald-100 max-h-[90vh] overflow-y-auto scrollbar-hide"
+            className="relative w-full max-w-md bg-[#F0FDF4] rounded-3xl shadow-2xl border border-emerald-100 overflow-hidden"
           >
             <button
               onClick={closePopup}
-              className="absolute top-3 right-3 p-1.5 rounded-full bg-emerald-100 text-emerald-900 hover:bg-emerald-200 transition-colors z-10"
+              className="absolute top-4 right-4 p-1.5 rounded-full bg-emerald-100/80 backdrop-blur-sm text-emerald-900 hover:bg-emerald-200 transition-colors z-20"
             >
               <X size={18} />
             </button>
 
-            <div className="p-6">
+            <div 
+              className="max-h-[90vh] overflow-y-auto p-6 pt-10"
+              style={{ 
+                scrollbarWidth: 'none', 
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch'
+              }}
+            >
+              <style dangerouslySetInnerHTML={{__html: `
+                .max-h-\[90vh\]::-webkit-scrollbar {
+                  display: none;
+                }
+              `}} />
               <h2 className="text-xl font-bold text-[#065F46] text-center mb-4">Contact Us</h2>
               
               <form 
