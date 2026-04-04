@@ -12,6 +12,7 @@ import Pradeep from "../assets/Pradeep.png";
 import Pooja from "../assets/Pooja.jpg";
 import Suraj from "../assets/Suraj.png";
 import Pramod from '../assets/Director_Pramod.jpeg'
+import Kamal from '../assets/KamalSharma.jpeg'
 
 const director = {
   name: "Pramod Saini",
@@ -133,7 +134,7 @@ const team = [
       "GitHub",
       "Sass",
     ],
-    image: "/placeholder.svg",
+    image: Kamal,
   },
 ];
 
