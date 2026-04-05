@@ -7,8 +7,8 @@ import Logo from "../assets/NP1full.png";
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { 
-    label: "Services", 
+  {
+    label: "Services",
     to: "",
     submenu: [
       { label: "Web Development", to: "/services/web-development" },
@@ -21,8 +21,8 @@ const links = [
   { label: "Products", to: "/products" },
   { label: "Testimonials", to: "/testimonials" },
   { label: "Careers", to: "/careers" },
-  // { 
-  //   label: "Work", 
+  // {
+  //   label: "Work",
   //   to: "/work",
   //   submenu: [
   //     { label: "Projects", to: "/work/projects" },
@@ -31,6 +31,7 @@ const links = [
   //   ]
   // },
   { label: "Contact Us", to: "/contact" },
+  { label: "Dashboard", to: "/dashboard" },
 ];
 
 const Navbar = () => {
@@ -75,16 +76,18 @@ const Navbar = () => {
               <Link
                 to={l.to}
                 className={`text-sm font-medium transition-colors flex items-center gap-1 py-2 px-1 rounded-md ${
-                  location.pathname === l.to || (l.submenu && l.submenu.some(s => location.pathname === s.to))
+                  location.pathname === l.to ||
+                  (l.submenu &&
+                    l.submenu.some((s) => location.pathname === s.to))
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 } ${l.submenu && hoveredItem === l.label ? "bg-primary/5 text-primary" : ""}`}
               >
                 {l.label}
                 {l.submenu && (
-                  <ChevronDown 
-                    size={14} 
-                    className={`transition-transform duration-300 ${hoveredItem === l.label ? "rotate-180" : ""}`} 
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform duration-300 ${hoveredItem === l.label ? "rotate-180" : ""}`}
                   />
                 )}
               </Link>
