@@ -9,7 +9,7 @@ const links = [
   { label: "About", to: "/about" },
   { 
     label: "Services", 
-    to: "",
+    to: "/services",
     submenu: [
       { label: "Web Development", to: "/services/web-development" },
       { label: "App Development", to: "/services/app-development" },
