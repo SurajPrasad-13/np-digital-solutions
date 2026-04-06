@@ -1,0 +1,30 @@
+[1mdiff --git a/src/pages/Careers.tsx b/src/pages/Careers.tsx[m
+[1mindex 3a02706..a215bd6 100644[m
+[1m--- a/src/pages/Careers.tsx[m
+[1m+++ b/src/pages/Careers.tsx[m
+[36m@@ -20,7 +20,7 @@[m [mconst jobs = [[m
+     id: 2,[m
+     title: "UI/UX Designer",[m
+     dept: "Design",[m
+[31m-    location: "New York",[m
+[32m+[m[32m    location: "Remote",[m
+     type: "Full-time",[m
+     desc: "Create stunning user interfaces and seamless experiences for web and mobile applications.",[m
+   },[m
+[36m@@ -44,7 +44,7 @@[m [mconst jobs = [[m
+     id: 5,[m
+     title: "Digital Marketing Manager",[m
+     dept: "Marketing",[m
+[31m-    location: "New York",[m
+[32m+[m[32m    location: "Remote",[m
+     type: "Full-time",[m
+     desc: "Lead digital marketing campaigns across channels including social, email, and paid advertising.",[m
+   },[m
+[36m@@ -274,3 +274,7 @@[m [mconst Careers = () => {[m
+ };[m
+ [m
+ export default Careers;[m
+[41m+[m
+[41m+[m
+[41m+[m
+[41m+[m

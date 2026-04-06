@@ -20,7 +20,7 @@ const jobs = [
     id: 2,
     title: "UI/UX Designer",
     dept: "Design",
-    location: "New York",
+    location: "Remote",
     type: "Full-time",
     desc: "Create stunning user interfaces and seamless experiences for web and mobile applications.",
   },
@@ -44,7 +44,7 @@ const jobs = [
     id: 5,
     title: "Digital Marketing Manager",
     dept: "Marketing",
-    location: "New York",
+    location: "Remote",
     type: "Full-time",
     desc: "Lead digital marketing campaigns across channels including social, email, and paid advertising.",
   },
@@ -274,3 +274,7 @@ const Careers = () => {
 };
 
 export default Careers;
+
+
+
+
