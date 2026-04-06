@@ -54,6 +54,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const [direction, setDirection] = useState(1);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [current, setCurrent] = useState(0);
@@ -77,7 +78,6 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       next();
-    // }, 5000); // Change slide every 5 seconds
     }, 5000); // Change slide every 5 seconds
     return () => clearInterval(interval);
   }, [current]);
@@ -160,10 +160,8 @@ const TestimonialsSection = () => {
             key={current}
             custom={direction}
             initial={{ x: direction > 0 ? 100 : -100, opacity: 0 }}
-            exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
-            // initial={{ x: direction > 0 ? "100%" : "-100%", opacity: 0 }}
-            // exit={{ x: direction > 0 ? "-100%" : "100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
+            exit={{ x: direction > 0 ? -100 : 100, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="glass-card p-8 md:p-12 text-center"
           >
@@ -182,20 +180,11 @@ const TestimonialsSection = () => {
             <p className="text-lg md:text-xl leading-relaxed mb-8 text-foreground/90 italic">
               "{testimonials[current].text}"
             </p>
-            <p className="text-lg md:text-xl leading-relaxed mb-8 text-foreground/90 italic">
-              "{testimonials[current].text}"
-            </p>
 
             <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3 font-heading font-bold text-primary text-lg">
               {testimonials[current].name[0]}
             </div>
-            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3 font-heading font-bold text-primary text-lg">
-              {testimonials[current].name[0]}
-            </div>
 
-            <h4 className="font-heading font-semibold">
-              {testimonials[current].name}
-            </h4>
             <h4 className="font-heading font-semibold">
               {testimonials[current].name}
             </h4>
@@ -205,6 +194,7 @@ const TestimonialsSection = () => {
             </p>
           </motion.div>
         </AnimatePresence>
+        {/* Carousel Buttons */}
         <div className="flex justify-center gap-4 mt-8">
           <button
             onClick={prev}
