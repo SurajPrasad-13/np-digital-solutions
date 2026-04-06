@@ -8,7 +8,8 @@ import {
   X,
   Phone,
 } from "lucide-react";
-import { useState } from "react"; // 🔥 ADDED
+import { useState } from "react";
+import logo from '../assets/favicon1.png'
 
 const Footer = () => {
 
@@ -199,8 +200,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2026 NP Digital Solutions. All rights reserved.
+          <p className="text-sm text-black flex items-center justify-center gap-1">
+            © 2026 <img className="h-[14px]" src={logo} alt="" /> All rights reserved.
           </p>
         </div>
       </div>

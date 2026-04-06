@@ -4,9 +4,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
-import ContactPopup from "@/components/ContactPopup";
+
+// Pages
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -22,14 +22,16 @@ import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
+// Dashboard Components
+import { DashboardLayout } from "./components/DashboardLayout";
+import DashboardHome from "./pages/DashboardHome";
+import Subscribers from "./pages/Subscribers";
+import Messages from "./pages/Messages";
+import Feedback from "./pages/Feedback";
+import Newsletter from "./pages/Newsletter";
+import Login from "./pages/Login";
 
-// const DarkModeInit = () => {
-//   useEffect(() => {
-//     document.documentElement.classList.add("dark");
-//   }, []);
-//   return null;
-// };
+const queryClient = new QueryClient();
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -50,6 +52,14 @@ const AnimatedRoutes = () => {
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
+        <Route element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<DashboardHome />} />
+          <Route path="/subscribers" element={<Subscribers />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/newsletter" element={<Newsletter />} />
+        </Route>
       </Routes>
     </AnimatePresence>
   );
@@ -61,9 +71,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        {/* <DarkModeInit /> */}
         <ScrollToTop />
-        <ContactPopup />
         <AnimatedRoutes />
       </BrowserRouter>
     </TooltipProvider>

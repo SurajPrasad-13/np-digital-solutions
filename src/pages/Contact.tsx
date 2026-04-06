@@ -9,6 +9,7 @@ import {
   Twitter,
   Linkedin,
   Instagram,
+  Facebook,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,6 +17,29 @@ import PageTransition from "@/components/PageTransition";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHeader from "@/components/PageHeader";
 import { useState } from "react"; // 🔥 ADDED
+
+const socialLinks = [
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/np-digital-solutions-a8b162400/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BkdYPMSIaQ%2FihXFNFUDmMaw%3D%3D",
+    label: "LinkedIn",
+  },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/npdigitalsolutions001/",
+    label: "Instagram",
+  },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/profile.php?id=61574331538312",
+    label: "Facebook",
+  },
+  {
+    icon: Github,
+    href: "https://github.com/npdigitalsolutions001",
+    label: "Facebook",
+  },
+];
 
 const Contact = () => {
   // 🔥 ADDED
@@ -134,24 +158,19 @@ const Contact = () => {
                   placeholder="Phone Number (optional)"
                   className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
                 />
-
-                <input
-                  list="subject-suggestions"
-                  type="text"
-                  name="subject"
+                <select
+                  id="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Subject"
                   className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
-                />
-
-                <datalist id="subject-suggestions">
-                  <option value="Web Development" />
-                  <option value="App Development" />
-                  <option value="UI/UX Design" />
-                  <option value="SEO Optimization" />
-                  <option value="Digital Marketing" />
-                </datalist>
+                >
+                  <option value="Web-Development">Web-Development</option>
+                  <option value="App-Development">App-Development</option>
+                  <option value="SEO">SEO</option>
+                  <option value="Digital-Marketing">Digital-Marketing</option>
+                  <option value="UI/UX-Design">UI/UX-Design</option>
+                  <option value="Other">Other</option>
+                </select>
 
                 <textarea
                   name="message"
@@ -227,13 +246,15 @@ const Contact = () => {
                   Follow Us
                 </h4>
                 <div className="flex gap-3">
-                  {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
+                  {socialLinks.map((social, index) => (
                     <a
-                      key={i}
-                      href="#"
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
                     >
-                      <Icon size={18} />
+                      <social.icon size={18} />
                     </a>
                   ))}
                 </div>

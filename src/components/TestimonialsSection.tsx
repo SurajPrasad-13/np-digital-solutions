@@ -77,6 +77,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       next();
+    // }, 5000); // Change slide every 5 seconds
     }, 5000); // Change slide every 5 seconds
     return () => clearInterval(interval);
   }, [current]);
@@ -181,11 +182,20 @@ const TestimonialsSection = () => {
             <p className="text-lg md:text-xl leading-relaxed mb-8 text-foreground/90 italic">
               "{testimonials[current].text}"
             </p>
+            <p className="text-lg md:text-xl leading-relaxed mb-8 text-foreground/90 italic">
+              "{testimonials[current].text}"
+            </p>
 
             <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3 font-heading font-bold text-primary text-lg">
               {testimonials[current].name[0]}
             </div>
+            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-3 font-heading font-bold text-primary text-lg">
+              {testimonials[current].name[0]}
+            </div>
 
+            <h4 className="font-heading font-semibold">
+              {testimonials[current].name}
+            </h4>
             <h4 className="font-heading font-semibold">
               {testimonials[current].name}
             </h4>
