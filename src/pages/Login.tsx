@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from "sonner";
 import { Mail, Lock, LogIn, UserPlus } from "lucide-react";
 import { motion } from "framer-motion";
+import logo1 from "../assets/NP1full.png";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -52,7 +53,7 @@ export default function Login() {
       >
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-foreground">
-            📬 MailDash
+            <img src={logo1} alt="NP Digital Solutions" className="mx-auto h-12 mb-4" />
           </h1>
           <p className="mt-2 text-muted-foreground">
             {isSignUp ? "Create your account" : "Sign in to your dashboard"}
@@ -120,7 +121,7 @@ export default function Login() {
                   </>
                 )}
               </Button>
-              <Button
+              {/* <Button
                 type="button"
                 variant="ghost"
                 className="w-full text-sm"
@@ -129,7 +130,7 @@ export default function Login() {
                 {isSignUp
                   ? "Already have an account? Sign in"
                   : "Don't have an account? Sign up"}
-              </Button>
+              </Button> */}
             </CardFooter>
           </form>
         </Card>

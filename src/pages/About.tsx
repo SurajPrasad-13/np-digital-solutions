@@ -11,8 +11,8 @@ import Aakash from "../assets/Aakash.jpeg";
 import Pradeep from "../assets/Pradeep.png";
 import Pooja from "../assets/Pooja.jpg";
 import Suraj from "../assets/Suraj.png";
-import Pramod from '../assets/Director_Pramod.jpeg'
-import Kamal from '../assets/KamalSharma.jpeg'
+import Pramod from '../assets/Pramod.jpeg'
+import Kamal from '../assets/Kamal.jpeg'
 
 const director = {
   name: "Pramod Saini",
