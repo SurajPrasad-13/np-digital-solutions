@@ -34,7 +34,7 @@ const links = [
   //   ]
   // },
   { label: "Contact Us", to: "/contact" },
-  { label: "Dashboard", to: "/dashboard" },
+  // { label: "Dashboard", to: "/dashboard" },
 ];
 
 const Navbar = () => {

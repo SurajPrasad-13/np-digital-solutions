@@ -16,7 +16,14 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageHeader from "@/components/PageHeader";
-import { useState } from "react"; // 🔥 ADDED
+import { useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const socialLinks = [
   {
@@ -53,16 +60,21 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false); // 🔥 ADDED
 
-  // 🔥 ADDED
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  // 🔥 ADDED
-  const handleSubmit = async (e) => {
+  const handleSubjectChange = (value: string) => {
+    setFormData({
+      ...formData,
+      subject: value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
@@ -158,19 +170,23 @@ const Contact = () => {
                   placeholder="Phone Number (optional)"
                   className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
                 />
-                <select
-                  id="subject"
+                <Select
                   value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:border-primary/50 transition-colors"
+                  onValueChange={handleSubjectChange}
+                  required
                 >
-                  <option value="Web-Development">Web-Development</option>
-                  <option value="App-Development">App-Development</option>
-                  <option value="SEO">SEO</option>
-                  <option value="Digital-Marketing">Digital-Marketing</option>
-                  <option value="UI/UX-Design">UI/UX-Design</option>
-                  <option value="Other">Other</option>
-                </select>
+                  <SelectTrigger className="w-full px-4 py-3 h-auto rounded-xl bg-secondary border border-border text-sm focus:outline-none focus:ring-0 focus:border-primary/50 transition-colors">
+                    <SelectValue placeholder="Select Subject" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-secondary border-border">
+                    <SelectItem value="Web-Development">Web Development</SelectItem>
+                    <SelectItem value="App-Development">App Development</SelectItem>
+                    <SelectItem value="SEO">SEO Optimization</SelectItem>
+                    <SelectItem value="Digital-Marketing">Digital Marketing</SelectItem>
+                    <SelectItem value="UI/UX-Design">UI/UX Design</SelectItem>
+                    <SelectItem value="Other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
 
                 <textarea
                   name="message"

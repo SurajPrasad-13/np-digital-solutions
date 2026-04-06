@@ -67,7 +67,7 @@ const ServicesSection = () => {
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-4">
               Our <span className="gradient-text">Services</span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed max-w-lg">
+            <p className="text-muted-foreground leading-relaxed max-w-lg mb-8">
               From design to deployment, we offer end-to-end digital solutions
               that help your business thrive in the modern landscape.
               <br /> We empower
@@ -77,6 +77,12 @@ const ServicesSection = () => {
               thoughtful UI/UX design, we deliver engaging digital experiences
               that users love.
             </p>
+            <Link
+              to="/contact"
+              className="gradient-button px-8 py-3 text-sm inline-flex items-center gap-2"
+            >
+              Contact Us <ArrowRight size={16} />
+            </Link>
           </motion.div>
 
           <motion.div
