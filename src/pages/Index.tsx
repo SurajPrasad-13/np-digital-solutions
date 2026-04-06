@@ -12,11 +12,13 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CTASection from "@/components/CTASection";
 import PageTransition from "@/components/PageTransition";
+import ContactPopup from "@/components/ContactPopup";
 
 const Index = () => (
   <PageTransition>
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <ContactPopup />
       <HeroSection />
       <WhyUsSection />
       <ServicesSection />

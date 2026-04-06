@@ -15,7 +15,7 @@ const products = [
     tagline: "Real-time business intelligence",
     desc: "Powerful analytics dashboard with real-time insights, custom reports, and AI-powered recommendations for data-driven decisions.",
     features: ["Real-time dashboards", "Custom report builder", "AI insights", "Team collaboration"],
-    price: "$49/mo",
+    price: "₹4990/mo",
     color: "hsl(252, 85%, 60%)",
   },
   {
@@ -24,7 +24,7 @@ const products = [
     tagline: "No-code website builder",
     desc: "Drag-and-drop website builder with 100+ premium templates, built-in SEO tools, and lightning-fast hosting.",
     features: ["100+ templates", "Drag & drop editor", "Built-in SEO", "One-click deploy"],
-    price: "$29/mo",
+    price: "₹2990/mo",
     color: "hsl(200, 100%, 50%)",
   },
   {
@@ -33,7 +33,7 @@ const products = [
     tagline: "Website security suite",
     desc: "Comprehensive website security monitoring with threat detection, SSL management, and automated vulnerability scanning.",
     features: ["24/7 monitoring", "Threat detection", "SSL management", "Auto-patching"],
-    price: "$39/mo",
+    price: "₹3990/mo",
     color: "hsl(160, 70%, 45%)",
   },
   {
@@ -42,7 +42,7 @@ const products = [
     tagline: "CI/CD made simple",
     desc: "Streamlined deployment pipeline for modern web applications with zero-downtime deploys and rollback protection.",
     features: ["One-click deploy", "Auto-scaling", "Rollback protection", "GitHub integration"],
-    price: "$19/mo",
+    price: "₹1990/mo",
     color: "hsl(270, 80%, 55%)",
   },
   {
@@ -51,7 +51,7 @@ const products = [
     tagline: "Premium design system",
     desc: "Complete design system with 500+ components, design tokens, and Figma integration for consistent branding.",
     features: ["500+ components", "Figma plugin", "Design tokens", "Dark mode support"],
-    price: "$99/once",
+    price: "₹4990/once",
     color: "hsl(45, 90%, 55%)",
   },
   {
@@ -60,7 +60,7 @@ const products = [
     tagline: "Performance optimization",
     desc: "Automated performance optimization tool that analyzes and speeds up your website with actionable insights.",
     features: ["Core Web Vitals", "Image optimization", "Code splitting", "CDN integration"],
-    price: "$24/mo",
+    price: "₹2490/mo",
     color: "hsl(340, 80%, 55%)",
   },
 ];

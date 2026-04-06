@@ -13,31 +13,31 @@ import { Link } from "react-router-dom";
 
 const services = [
   {
-    to:'/services',
+    to: "/services",
     icon: Figma,
     title: "UI/UX Design",
     desc: "Beautiful, intuitive interfaces that delight users and drive engagement across all platforms.",
   },
   {
-    to:'/services',
+    to: "/services",
     icon: Search,
     title: "SEO Optimization",
     desc: "Data-driven strategies to boost your search rankings and organic traffic.",
   },
   {
-    to:'/services',
+    to: "/services",
     icon: Globe,
     title: "Web Development",
     desc: "High-performance websites built with cutting-edge technologies for speed and scale.",
   },
   {
-    to:'/services',
+    to: "/services",
     icon: Smartphone,
     title: "App Development",
     desc: "Native and cross-platform mobile apps that deliver seamless user experiences.",
   },
   {
-    to:'/services',
+    to: "/services",
     icon: Megaphone,
     title: "Digital Marketing",
     desc: "Comprehensive campaigns that amplify your brand and convert audiences.",
@@ -70,6 +70,12 @@ const ServicesSection = () => {
             <p className="text-muted-foreground leading-relaxed max-w-lg">
               From design to deployment, we offer end-to-end digital solutions
               that help your business thrive in the modern landscape.
+              <br /> We empower
+              brands with cutting-edge web and app development solutions built
+              for performance and scalability. <br /> Our data-driven SEO and digital
+              marketing strategies ensure maximum reach and ROI. Through
+              thoughtful UI/UX design, we deliver engaging digital experiences
+              that users love.
             </p>
           </motion.div>
 
@@ -115,10 +121,9 @@ const ServicesSection = () => {
                 {s.desc}
               </p>
               <Link to={s.to}>
-
-              <button className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all">
-                Learn More <ArrowRight size={16} />
-              </button>
+                <button className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all">
+                  Learn More <ArrowRight size={16} />
+                </button>
               </Link>
             </motion.div>
           ))}
