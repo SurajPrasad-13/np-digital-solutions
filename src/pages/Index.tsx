@@ -28,7 +28,7 @@ const Index = () => (
       <PortfolioSection />
       <BlogSection />
       <CTASection />
-      <LocationSection />
+      <LocationSection /  >
       <Footer />
       <WhatsAppButton />
     </div>

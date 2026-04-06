@@ -11,6 +11,7 @@ const links = [
     label: "Services", 
     to: "/services",
     submenu: [
+      { label: "All Services", to: "/services" },
       { label: "Web Development", to: "/services/web-development" },
       { label: "App Development", to: "/services/app-development" },
       { label: "UI/UX Design", to: "/services/ui-ux-design" },
@@ -33,7 +34,7 @@ const links = [
   //   ]
   // },
   { label: "Contact Us", to: "/contact" },
-  { label: "Dashboard", to: "/dashboard" },
+  // { label: "Dashboard", to: "/dashboard" },
 ];
 
 const Navbar = () => {

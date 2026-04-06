@@ -59,16 +59,16 @@ const WhatsAppButton = () => {
   const endAngle = -90; // End angle in degrees (Top)
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex items-center justify-center">
+    <div className="fixed bottom-8 right-8 z-[9999] flex items-center justify-center">
       {/* Main Toggle Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 1, type: "spring" }}
+        transition={{ type: "spring" }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-colors z-50 ${
+        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-colors z-[9999] ${
           isOpen
             ? "bg-muted text-muted-foreground"
             : "bg-primary text-primary-foreground animate-pulse-glow"
