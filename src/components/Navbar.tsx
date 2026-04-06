@@ -7,9 +7,9 @@ import Logo from "../assets/NP1full.png";
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  {
-    label: "Services",
-    to: "",
+  { 
+    label: "Services", 
+    to: "/services",
     submenu: [
       { label: "Web Development", to: "/services/web-development" },
       { label: "App Development", to: "/services/app-development" },
@@ -21,6 +21,8 @@ const links = [
   { label: "Products", to: "/products" },
   { label: "Testimonials", to: "/testimonials" },
   { label: "Careers", to: "/careers" },
+  // {
+  //   label: "Work",
   // {
   //   label: "Work",
   //   to: "/work",
