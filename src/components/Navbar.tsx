@@ -34,7 +34,6 @@ const links = [
   // },
   { label: "Contact Us", to: "/contact" },
   { label: "Dashboard", to: "/dashboard" },
-  { label: "Dashboard", to: "/dashboard" },
 ];
 
 const Navbar = () => {
@@ -82,18 +81,12 @@ const Navbar = () => {
                   location.pathname === l.to ||
                   (l.submenu &&
                     l.submenu.some((s) => location.pathname === s.to))
-                  location.pathname === l.to ||
-                  (l.submenu &&
-                    l.submenu.some((s) => location.pathname === s.to))
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 } ${l.submenu && hoveredItem === l.label ? "bg-primary/5 text-primary" : ""}`}
               >
                 {l.label}
                 {l.submenu && (
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform duration-300 ${hoveredItem === l.label ? "rotate-180" : ""}`}
                   <ChevronDown
                     size={14}
                     className={`transition-transform duration-300 ${hoveredItem === l.label ? "rotate-180" : ""}`}
