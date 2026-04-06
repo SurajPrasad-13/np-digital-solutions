@@ -59,12 +59,6 @@ const TestimonialsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [current, setCurrent] = useState(0);
 
-  const [direction, setDirection] = useState(1);
-
-  // const next = () => setCurrent((c) => (c + 1) % testimonials.length);
-  // const prev = () =>
-  //   setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
-
   const next = () => {
     setDirection(1);
     setCurrent((c) => (c + 1) % testimonials.length);
