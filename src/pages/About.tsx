@@ -12,7 +12,7 @@ import Pradeep from "../assets/Pradeep.png";
 import Pooja from "../assets/Pooja.jpg";
 import Suraj from "../assets/Suraj.png";
 import Pramod from '../assets/Pramod.jpeg'
-import Kamal from '../assets/Kamal.jpeg'
+import Kamal from '../assets/kamal.jpeg'
 
 const director = {
   name: "Pramod Saini",
