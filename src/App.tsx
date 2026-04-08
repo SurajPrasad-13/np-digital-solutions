@@ -30,6 +30,7 @@ import Messages from "./pages/Messages";
 import Feedback from "./pages/Feedback";
 import Newsletter from "./pages/Newsletter";
 import Login from "./pages/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
@@ -53,12 +54,14 @@ const AnimatedRoutes = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/admin-login" element={<Login />} />
+        
+        {/* Admin Dashboard Routes */}
         <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<DashboardHome />} />
-          <Route path="/subscribers" element={<Subscribers />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/feedback" element={<Feedback />} />
-          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/dashboard" element={<ProtectedRoute Component = {DashboardHome}  />} />
+          <Route path="/subscribers" element={<ProtectedRoute Component = {Subscribers}  />} />
+          <Route path="/messages" element={<ProtectedRoute Component = {Messages}  />} />
+          <Route path="/feedback" element={<ProtectedRoute Component = {Feedback}  />} />
+          <Route path="/newsletter" element={<ProtectedRoute Component = {Newsletter} />} />
         </Route>
       </Routes>
     </AnimatePresence>
