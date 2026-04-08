@@ -3,9 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { toast } from "sonner";
-import { Lock, LogIn, UserPlus, UserRound, } from "lucide-react";
+import { Lock, LogIn, UserPlus, UserRound } from "lucide-react";
 import { motion } from "framer-motion";
 import logo1 from "../assets/NP1full.png";
 
@@ -16,44 +23,81 @@ export default function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
   const navigate = useNavigate();
 
-  // const handleSubmit = async (e: React.FormEvent) => {
+  const api = "https://api.npdigitalsolution.com/api/admin/login";
+
+  // const handleLogin = async (e: React.FormEvent) => {
   //   e.preventDefault();
   //   setLoading(true);
-
   //   try {
-  //     if (isSignUp) {
-  //       const { error } = await supabase.auth.signUp({
-  //         email,
-  //         password,
-  //         options: { emailRedirectTo: window.location.origin },
-  //       });
-  //       if (error) throw error;
-  //       toast.success("Check your email to confirm your account!");
-  //     } else {
-  //       const { error } = await supabase.auth.signInWithPassword({ email, password });
-  //       if (error) throw error;
+  //     const res = await fetch(api, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         username: userName,
+  //         password: password,
+  //       }),
+  //     });
+
+  //     const data = await res.json();
+
+  //     if (res.ok) {
+  //       localStorage.setItem("login", JSON.stringify(data));
   //       toast.success("Welcome back!");
-  //       navigate("/");
+  //       navigate("/dashboard");
+  //     } else {
+  //       toast.error(data.message || "Invalid credentials");
   //     }
-  //   } catch (error: any) {
-  //     toast.error(error.message);
+  //   } catch (error) {
+  //     toast.error("An error occurred during login");
+  //     console.error("Login error:", error);
   //   } finally {
   //     setLoading(false);
   //   }
   // };
 
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
 
-  const handleLogin = ()=>{
-    localStorage.setItem('login', JSON.stringify({userName:userName,password:password}))
-    navigate('/dashboard')
-  }
-  useEffect(() => {
-    let login = localStorage.getItem('login')
-    if(login){
-      navigate('/dashboard')
+    try {
+      const formData = new URLSearchParams();
+      formData.append("username", userName);
+      formData.append("password", password);
+
+      const res = await fetch(api, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem("login", JSON.stringify(data));
+        toast.success("Welcome back!");
+        navigate("/dashboard");
+      } else {
+        toast.error(data.message || "Invalid credentials");
+      }
+    } catch (error) {
+      toast.error("An error occurred during login");
+      console.error("Login error:", error);
+    } finally {
+      setLoading(false);
     }
-  }, [])
-  
+  };
+
+  useEffect(() => {
+    let login = localStorage.getItem("login");
+    if (login) {
+      navigate("/dashboard");
+    }
+  }, []);
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
       <motion.div
@@ -64,7 +108,11 @@ export default function Login() {
       >
         <div className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-foreground">
-            <img src={logo1} alt="NP Digital Solutions" className="mx-auto h-12 mb-4" />
+            <img
+              src={logo1}
+              alt="NP Digital Solutions"
+              className="mx-auto h-12 mb-4"
+            />
           </h1>
           <p className="mt-2 text-muted-foreground">
             {isSignUp ? "Create your account" : "Sign in to your dashboard"}
@@ -85,12 +133,12 @@ export default function Login() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Username</Label>
+                <Label htmlFor="username">Username</Label>
                 <div className="relative">
                   <UserRound className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                    id="email"
-                    type="email"
+                  <Input
+                    id="username"
+                    type="text"
                     placeholder="User123"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
