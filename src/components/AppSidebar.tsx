@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
 import {
   Sidebar,
   SidebarContent,
@@ -35,16 +35,31 @@ export function AppSidebar() {
   const collapsed = state === "collapsed";
   const location = useLocation();
   const navigate = useNavigate();
-  // const { signOut } = useAuth();
 
-  // const handleLogout = async () => {
-  //   await signOut();
-  //   navigate("/login");
-  // };
-  const handleLogout = ()=>{
-    localStorage.removeItem('login')
-    navigate('/admin-login')
-  }
+  const api = "https://api.npdigitalsolution.com/api/admin/logout";
+  
+  const handleLogout = async () => {
+    try {
+      const loginData = localStorage.getItem("login");
+      const token = loginData ? JSON.parse(loginData).token : null;
+
+      if (token) {
+        await fetch(api, {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
+      }
+    } catch (error) {
+      console.error("Logout error:", error);
+    } finally {
+      localStorage.removeItem("login");
+      toast.success("Logged out successfully");
+      navigate("/admin-login");
+    }
+  };
 
   return (
     <Sidebar collapsible="icon">
