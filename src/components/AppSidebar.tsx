@@ -41,6 +41,10 @@ export function AppSidebar() {
   //   await signOut();
   //   navigate("/login");
   // };
+  const handleLogout = ()=>{
+    localStorage.removeItem('login')
+    navigate('/admin-login')
+  }
 
   return (
     <Sidebar collapsible="icon">
@@ -86,7 +90,7 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <button  className="flex items-center gap-2 w-full text-muted-foreground hover:text-destructive transition-colors">
+              <button onClick={handleLogout}  className="flex items-center gap-2 w-full text-muted-foreground hover:text-destructive transition-colors">
                 <LogOut className="h-4 w-4" />
                 {!collapsed && <span>Logout</span>}
               </button>
