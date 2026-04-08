@@ -1,48 +1,59 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { Mail, Lock, LogIn, UserPlus } from "lucide-react";
+import { Lock, LogIn, UserPlus, UserRound, } from "lucide-react";
 import { motion } from "framer-motion";
 import logo1 from "../assets/NP1full.png";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setLoading(true);
 
-    try {
-      if (isSignUp) {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: { emailRedirectTo: window.location.origin },
-        });
-        if (error) throw error;
-        toast.success("Check your email to confirm your account!");
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
-        toast.success("Welcome back!");
-        navigate("/");
-      }
-    } catch (error: any) {
-      toast.error(error.message);
-    } finally {
-      setLoading(false);
+  //   try {
+  //     if (isSignUp) {
+  //       const { error } = await supabase.auth.signUp({
+  //         email,
+  //         password,
+  //         options: { emailRedirectTo: window.location.origin },
+  //       });
+  //       if (error) throw error;
+  //       toast.success("Check your email to confirm your account!");
+  //     } else {
+  //       const { error } = await supabase.auth.signInWithPassword({ email, password });
+  //       if (error) throw error;
+  //       toast.success("Welcome back!");
+  //       navigate("/");
+  //     }
+  //   } catch (error: any) {
+  //     toast.error(error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
+  const handleLogin = ()=>{
+    localStorage.setItem('login', JSON.stringify({userName:userName,password:password}))
+    navigate('/dashboard')
+  }
+  useEffect(() => {
+    let login = localStorage.getItem('login')
+    if(login){
+      navigate('/dashboard')
     }
-  };
-
+  }, [])
+  
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
       <motion.div
@@ -61,7 +72,7 @@ export default function Login() {
         </div>
 
         <Card className="border-border/50 shadow-xl">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleLogin}>
             <CardHeader>
               <CardTitle className="text-xl">
                 {isSignUp ? "Sign Up" : "Sign In"}
@@ -74,15 +85,15 @@ export default function Login() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">Username</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                  <Input
+                  <UserRound className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Input
                     id="email"
                     type="email"
-                    placeholder="you@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="User123"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
                     className="pl-9"
                     required
                   />
