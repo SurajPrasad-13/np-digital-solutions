@@ -14,7 +14,7 @@ import PageHeader from "@/components/PageHeader";
 import CTASection from "@/components/CTASection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Meta from "../../assets/meta.png";
-import GoogleAds from "../../assets/googleads.png";
+import GoogleAds from "../../assets/googleAds.png";
 import Youtube from "../../assets/youtubeIcon.svg";
 import Gmail from "../../assets/Gmail-Logo.svg";
 import Instagram from "../../assets/Instagram-Logo.svg";
