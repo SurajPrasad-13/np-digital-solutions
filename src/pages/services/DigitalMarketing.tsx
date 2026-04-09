@@ -52,14 +52,15 @@ const services = [
   },
 ];
 
-// const channels = ["Google Ads", "Meta Ads", "LinkedIn Ads", "Email", "Instagram", "YouTube", "Twitter/X"];
-
 const channels = [
   {
     name: "LinkedIn Ads",
     src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNDggNDgiIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiPjxwYXRoIGZpbGw9IiMwMjg4RDEiIGQ9Ik00MiwzN2MwLDIuNzYyLTIuMjM4LDUtNSw1SDExYy0yLjc2MSwwLTUtMi4yMzgtNS01VjExYzAtMi43NjIsMi4yMzktNSw1LTVoMjZjMi43NjIsMCw1LDIuMjM4LDUsNVYzN3oiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTIgMTlIMTdWMzZIMTJ6TTE0LjQ4NSAxN2gtLjAyOEMxMi45NjUgMTcgMTIgMTUuODg4IDEyIDE0LjQ5OSAxMiAxMy4wOCAxMi45OTUgMTIgMTQuNTE0IDEyYzEuNTIxIDAgMi40NTggMS4wOCAyLjQ4NiAyLjQ5OUMxNyAxNS44ODcgMTYuMDM1IDE3IDE0LjQ4NSAxN3pNMzYgMzZoLTV2LTkuMDk5YzAtMi4xOTgtMS4yMjUtMy42OTgtMy4xOTItMy42OTgtMS41MDEgMC0yLjMxMyAxLjAxMi0yLjcwNyAxLjk5QzI0Ljk1NyAyNS41NDMgMjUgMjYuNTExIDI1IDI3djloLTVWMTloNXYyLjYxNkMyNS43MjEgMjAuNSAyNi44NSAxOSAyOS43MzggMTljMy41NzggMCA2LjI2MSAyLjI1IDYuMjYxIDcuMjc0TDM2IDM2IDM2IDM2eiIvPjwvc3ZnPg==",
   },
-  { name: "Twitter/X", src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjUwcHgiPjxwYXRoIGQ9Ik0gNi45MTk5MjE5IDYgTCAyMS4xMzY3MTkgMjYuNzI2NTYyIEwgNi4yMjg1MTU2IDQ0IEwgOS40MDYyNSA0NCBMIDIyLjU0NDkyMiAyOC43NzczNDQgTCAzMi45ODYzMjggNDQgTCA0MyA0NCBMIDI4LjEyMzA0NyAyMi4zMTI1IEwgNDIuMjAzMTI1IDYgTCAzOS4wMjczNDQgNiBMIDI2LjcxNjc5NyAyMC4yNjE3MTkgTCAxNi45MzM1OTQgNiBMIDYuOTE5OTIxOSA2IHoiLz48L3N2Zz4=" },
+  {
+    name: "Twitter/X",
+    src: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjUwcHgiPjxwYXRoIGQ9Ik0gNi45MTk5MjE5IDYgTCAyMS4xMzY3MTkgMjYuNzI2NTYyIEwgNi4yMjg1MTU2IDQ0IEwgOS40MDYyNSA0NCBMIDIyLjU0NDkyMiAyOC43NzczNDQgTCAzMi45ODYzMjggNDQgTCA0MyA0NCBMIDI4LjEyMzA0NyAyMi4zMTI1IEwgNDIuMjAzMTI1IDYgTCAzOS4wMjczNDQgNiBMIDI2LjcxNjc5NyAyMC4yNjE3MTkgTCAxNi45MzM1OTQgNiBMIDYuOTE5OTIxOSA2IHoiLz48L3N2Zz4=",
+  },
   { name: "YouTube", src: Youtube },
   { name: "Meta Ads", src: Meta },
   { name: "Google Ads", src: GoogleAds },
@@ -67,7 +68,6 @@ const channels = [
   { name: "Email", src: Gmail },
 ];
 
-'<img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciICB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MHB4IiBoZWlnaHQ9IjUwcHgiPjxwYXRoIGQ9Ik0gNi45MTk5MjE5IDYgTCAyMS4xMzY3MTkgMjYuNzI2NTYyIEwgNi4yMjg1MTU2IDQ0IEwgOS40MDYyNSA0NCBMIDIyLjU0NDkyMiAyOC43NzczNDQgTCAzMi45ODYzMjggNDQgTCA0MyA0NCBMIDI4LjEyMzA0NyAyMi4zMTI1IEwgNDIuMjAzMTI1IDYgTCAzOS4wMjczNDQgNiBMIDI2LjcxNjc5NyAyMC4yNjE3MTkgTCAxNi45MzM1OTQgNiBMIDYuOTE5OTIxOSA2IHoiLz48L3N2Zz4="/>'
 const DigitalMarketing = () => (
   <PageTransition>
     <div className="min-h-screen bg-background text-foreground">
@@ -124,7 +124,7 @@ const DigitalMarketing = () => (
                 transition={{ delay: i * 0.05 }}
                 className="px-5 py-2.5 rounded-full glass-card text-sm font-medium hover:border-primary/30 transition-all flex items-center justify-center gap-2"
               >
-                <img src={c.src} alt={c.name} className="size-6"/>
+                <img src={c.src} alt={c.name} className="size-6" />
                 {c.name}
               </motion.div>
             ))}
